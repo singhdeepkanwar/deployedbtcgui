@@ -8,7 +8,7 @@ import keras.utils as image
 import tensorflow.compat.v1 as tf
 gpuoptions = tf.compat.v1.GPUOptions(allow_growth=True)
 session = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=gpuoptions))
-
+import h5py as h5
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tqdm import tqdm
 import os
@@ -19,6 +19,7 @@ from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, TensorB
 from sklearn.metrics import classification_report,confusion_matrix
 import ipywidgets as widgets
 import io
+import tables
 from PIL import Image
 from IPython.display import display,clear_output
 from warnings import filterwarnings
@@ -28,7 +29,12 @@ from tensorflow import Graph
 from decimal import Decimal
 import time
 
-model=load_model('./final_model/effnet.h5')
+data='/home/ubuntu/MRI_classification_WebGUI/gui_backend/final_model/effnet.h5'
+try:
+	model=h5.File(data, 'r+')
+except OSError:
+    print("File not accessible yet")
+#model = h5.File(data,'r+')
 img_height, img_width=224,224
 '''model_graph = Graph()
 with model_graph.as_default():

@@ -1,0 +1,12 @@
+Watching for file changes with StatReloader
+Performing system checks...
+
+2023-05-27 10:50:36.799937: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+File not accessible yet
+System check identified no issues (0 silenced).
+May 27, 2023 - 10:50:43
+Django version 4.1.4, using settings 'gui_backend.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Error: That port is already in use.

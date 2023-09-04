@@ -152,7 +152,6 @@
                     <div class="card-body text-center">
                       <form method="POST" action="output" enctype="multipart/form-data">
                         {% csrf_token %}
-                        {{ form|crispy }}
                         <div class="col-md-4 col-sm-4 text-center"><center><label for="fname">Upload Image File Here:</label></center></div><input name="filePath" type="file"><br><br><br>
                         <input class="btn btn-info" type="submit" value="Generate Output Results">
                       </form>
